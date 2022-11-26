@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs 💼 - Start your carrer!</title>
+    <link rel="icon" type="image/gif/png" href="../static/images/job_junction-logo-head.png">
+    <script src="https://kit.fontawesome.com/7bb9495e7b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/jobstyles.css')}}">
+    <script src="{{url_for('static', filename='index.js')}}" defer></script>
+    <style>
+
+        .modal{
+            text-align: center;
+            width:100%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .modal_bottom{
+            background-color: #2246C2;
+            padding:24px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .modal_bottom p{
+            font-family: 'Zilla Slab';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 38px;
+            display: flex;
+            align-items: center;
+            color: #F8F8F8;
+        }
+
+        .modal_send{
+            background: #FBFBFB;
+            border-radius: 3px;
+            margin-top: 12px;
+            border: none;
+            padding:16px 8px;
+            outline:none;
+            margin-right: 16px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 128.69%;
+            text-align: center;
+            color: #2246C2;
+        }
+    </style>
+  
+  
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "c9539449-0fd4-4aca-8b8b-3a6c109a71fa", // The ID of this integration.
+      region: "jp-tok", // The region your integration is hosted in.
+      serviceInstanceID: "39284af4-f9b4-4159-be01-8ca534e21855", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+  
+</head>
+<body id="body">
+
+    <div class="menu_icon" id="menu">
+        <div class="first_div"></div>
+        <div class="second_div"></div>
+        <div class="third_div"></div>
+    </div>
+
+    <header> 
+        <div class="brand_box" style="cursor: pointer;">
+            <img onclick="location.href='/index';" src="{{ url_for('static', filename='images/job_junction-main.png')}}" alt="Job Junction Logo" />
+        </div>
+        <nav>
+            <ul class="nav_links" id="nav_links">
+                <li class="nav_link"><a href="#">Skills 💥</a></li>
+                {% if session['email'] %}
+                <li class="nav_link special_link" id="special_link"><a href="/profile" id="contact_link">Your Profile 😎</a></li>
+                {% else %}
+                <li class="nav_link special_link" id="special_link"><a href="/register" id="contact_link">Login / Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <div class="ourjobs">
+        <div class="header">
+            <p class="head">Best Guidance For You 💼</p>
+            <p class="description">Hand picked recommendations for you based on your skillset</p>
+        </div>
+        <div class="body">
+            <div class="jobs">
+                    <div class="job">
+                        <p class="job_title">One Step ahead 🚀</p>
+                        <p class="job_description">We recommend you the skill enhancement guidance, once we know about your skils. Don't hesitate or fear to call us.</p>
+                        <button onclick="location.href='tel:9080244817'" class="job_button">Call Us 📞</button>  
+                    </div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <p>Do you want Skilled Employees. Fill this form. Our team will get back you 📞</p>
+
+            {{ jmsg }} 
+            
+            <form action="{{ url_for('jobsrec') }}" method="POST" style="display: flex;flex-direction: column;align-items: center;">   
+                <input type="text" name="CandidateName" placeholder="Your Name"> <span style="font-size:14px; color:white;"></span>
+                <input type="text" name="CompanyName" placeholder="Your Company Name"> <span style="font-size:14px; color:white;"></span>
+                <input type="text" name="EmployeeRole" placeholder="Employee Role"> <span style="font-size:14px; color:white;"></span>
+                <input type="mail" name="CandidateMail" placeholder="Your Email"> <span style="font-size:14px; color:white;"></span>
+                <input type="tel" name="CandidateNumber" placeholder="Your Number"> <span style="font-size:14px; color:white;"></span>
+                <button type="submit" name="jobSubmit" class="button_send"><i class="fa-solid fa-paper-plane icon"></i>SEND</button>
+            </form>
+        </div>
+    </div>
+
+</body>    

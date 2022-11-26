@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hai 👋</title>
+    <link rel="icon" type="image/gif/png" href="../static/images/job_junction-logo-head.png">
+    <script src="https://kit.fontawesome.com/7bb9495e7b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profilestyles.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}" defer></script>
+
+    
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "c9539449-0fd4-4aca-8b8b-3a6c109a71fa", // The ID of this integration.
+      region: "jp-tok", // The region your integration is hosted in.
+      serviceInstanceID: "39284af4-f9b4-4159-be01-8ca534e21855", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+      
+</head>
+<body id="body">
+
+    <div class="menu_icon" id="menu">
+        <div class="first_div"></div>
+        <div class="second_div"></div>
+        <div class="third_div"></div>
+    </div>
+
+    <header>
+        <div class="brand_box" style="cursor: pointer;">
+            <img onclick="location.href='/index';" src="../static/images/job_junction-main.png" alt="Job Junction Logo" />
+        </div>
+        <nav>
+            <ul class="nav_links" id="nav_links">
+                <li class="nav_link"><a href="/jobs">Skills 💥</a></li>
+                {% if session['email'] %}
+                <li class="nav_link special_link" id="special_link"><a href="/profile" id="contact_link">Your Profile 😎</a></li>
+                {% else %}
+                <li class="nav_link special_link" id="special_link"><a href="/register" id="contact_link">Login / Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <div class="myprofile">
+        <div class="header">
+            <p class="head">{{ smsg }}</p>
+            <p class="head">Welcome Back!</p>
+        </div>
+        <div class="body">
+            <div class="profiles">
+                <div class="profile">
+                    <p class="profile_title"> {{ session['name'] }}<span class="job_category"></span></p>
+                    <a class="profile_title" style="text-align: center; display: block; margin-top: 16px;" href="mailto:{{session['email']}}">{{session['email']}}</a>
+                    <a class="profile_title" style="text-align: center; display: block; margin-top: 16px;" href="tel:{{session['number']}}">{{session['number']}}</a>
+                    <a class="nav_link special_link" id="special_link" style="text-align: center; display: block; margin-top: 16px;" href="/exploreJobs">Explore Jobs🤯</a>
+                    <p class="profile_company" onclick="location.href='#'"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="header">
+            <form action="{{url_for('logout')}}">
+            <p class="description" style="cursor:pointer; text-align: center;;" onclick="location.href='/logout';"><button type="submit" name="logout" class="button_send" style="margin:16px auto; text-align: center; cursor: pointer;">LOGOUT</button></p>
+            </form>
+        </div>
+    </div>
+
+</body>    

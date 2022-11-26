@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Junction</title>
+    <link rel="icon" type="image/gif/png" href="../static/images/job_junction-logo-head.png">
+    <script src="https://kit.fontawesome.com/7bb9495e7b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexstyles.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}" defer></script>
+
+    <style>
+
+        /*#body{
+            background-color: #2246c247;
+        }*/
+
+        .modal{
+            text-align: center;
+        }
+
+        .modal_bottom{
+            background-color: #2246C2;
+            padding:24px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        .modal_bottom p{
+            font-family: 'Zilla Slab';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 38px;
+            display: flex;
+            align-items: center;
+            color: #F8F8F8;
+        }
+
+        .modal_send{
+            background: #FBFBFB;
+            border-radius: 3px;
+            margin-top: 12px;
+            border: none;
+            padding:16px 8px;
+            outline:none;
+            margin-right: 16px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 128.69%;
+            text-align: center;
+            color: #2246C2;
+        }
+    </style>
+
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "c9539449-0fd4-4aca-8b8b-3a6c109a71fa", // The ID of this integration.
+      region: "jp-tok", // The region your integration is hosted in.
+      serviceInstanceID: "39284af4-f9b4-4159-be01-8ca534e21855", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+</head>
+<body id="body">
+
+
+    <div class="menu_icon" id="menu">
+        <div class="first_div"></div>
+        <div class="second_div"></div>
+        <div class="third_div"></div>
+    </div>
+
+    <header>
+        <div  class="brand_box">
+            <img src="../static/images/job_junction-main.png" 
+            alt="Job Junction Logo" />
+        </div>
+        <nav>
+            <ul class="nav_links" id="nav_links">
+                <li class="nav_link"><a href="/jobs">Skills 💥</a></li>
+                            {% if session['email'] %}
+                            <li class="nav_link special_link" id="special_link"><a href="/profile" id="contact_link">Your Profile 😎</a></li>
+                            {% else %}
+                            <li class="nav_link special_link" id="special_link"><a href="/register" id="contact_link">Login / Register</a></li>
+                            {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="hero">
+        <div class="_hero hero_left">
+            <div>
+                <p class="hero_left-heading">We are here to transform<br><span class="special_secondary">Your </span><span class="special_primary">Life ⚡</span></p>
+                <p class="hero_left-content">One & Only platform to support your skills, To get a job with your skills and To strenthen your Skills</p>
+                <div class="hero_left-statistics">
+                    <div class="hero_left-stat">
+                        <p class="hero_left-statnum">10+</p>
+                        <p class="hero_left-statlabel">Start-Ups</p>
+                    </div>
+                    <div class="hero_left-stat">
+                        <p class="hero_left-statnum">50+</p>
+                        <p class="hero_left-statlabel">Job Offers</p>
+                    </div>
+                    <div class="hero_left-stat">
+                        <p class="hero_left-statnum">25+</p>
+                        <p class="hero_left-statlabel">Categories</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="_hero hero_right">
+            <img src="{{url_for('static', filename='images/job_junction-hero-image.svg')}}" alt="job junction hero image">
+        </div>
+    </div>
+
+    <div class="ourservices">
+        <div class="header">
+            <p class="head">Our Services</p>
+            <p class="description">From finding your skill to get a job in your area of interest 💖</p>
+        </div>
+        <div class="body">
+            <div class="content">
+                <div class="content_service">
+                    <p>Skill Finding</p>
+                </div>
+
+                <div class="content_service">
+                    <p>Skill Enhancement</p>
+                </div>
+
+                <div class="content_service">
+                    <p>Job Recommendation</p>
+                </div>
+
+                <div class="content_service">
+                    <p>Community Building</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+    <div class="ourworks">
+        <div class="header">
+            <p class="head">Our Efforts</p>
+            <p class="description">We aren't here to just talk, We are trying to solve your problems through our platform</p>
+        </div>
+        <div class="body">
+            <div class="content">
+                <div class="content_project"> 
+                    <img src="{{url_for('static', filename='images/effort1.jpg')}}" alt="Job Junction Skill Finding Sessions">
+                    <h5>Skill Finding Sessions</h5>
+                    <p>Event organised by <span style="color: #FFB800;">Job Junction </span> in Karur. More than <span style="color: #FFB800;"> 100+ students participated,</span> and got guidance from us.</p>
+                    <button>View More</button>       
+                </div>
+                <div class="content_project">
+                    <img src="{{url_for('static', filename='images/effort2.jpg')}}" alt="Job Junction Interview Sessions">
+                    <h5>Interview Sessions</h5>
+                    <p>From skill finding sessions, students got <span style="color: #040d31;">interviews based on their skill levels.</span> More than 200+ students got benefitted from this session.</p>
+                    <button>View More</button>       
+                </div>
+            </div>
+        </div>
+        <div class="bottom"> 
+            <p>We have more to show you 😎</p>
+            <a href="/login">Want to see ? <span>CLICK HERE <i class="fa-solid fa-arrow-right icon"></i></span></a>
+            <img class="decimg decimg1" src="{{url_for('static', filename='images/jobjunction_uiux.svg')}}" alt="UIUX Design">
+            <img class="decimg decimg2" src="{{url_for('static', filename='images/jobjunction_appdevelopment.svg')}}" alt="App Development">
+            <img class="decimg decimg3" src="{{url_for('static', filename='images/jobjunction_endtoendsolutions.svg')}}" alt="End-to-End Solutions">
+            <img class="decimg decimg4" src="{{url_for('static', filename='images/jobjunction_webdevelopment.svg')}}" alt="Web Development">
+        </div>
+    </div>
+
+    <div class="happycustomers">
+        <div class="header">
+            <p class="head">Our <span style="color:#2246C2">Words to you</span></p>
+            <p class="description">We suffered a lot in finding jobs. So, we are here to solve it 💪</p>
+        </div>
+        <div class="body">
+            <div class="content">
+                <div class="content_feedbacks">
+                    <div class="feedback">
+                        <p>In our beginning of our career as a fresher, We struggled a lot to find jobs. Platforms like LinkedIn, Naukri and Indeed suggest jobs just by our keywords and resume. It doesn't provide the exact jobs for us. Company's description for aren't optimised for freshers. So, we talk to you and recommend you the jobs, courses to take and personalised guidance in a more human-centered way 👨🏻‍🤝‍👨🏻</p>
+                        <h4>- Job Junction Team</h4>
+                    </div> 
+                    <img class="quote" src="{{url_for('static', filename='images/quote.svg')}}" alt="Job Junction Customers Feedback Quote">
+                </div>
+                <div class="content_svg">
+                    <img src="{{url_for('static', filename='images/jobjunction_customer_svg.svg')}}" alt="Job Junction Happy Customers.">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="header">
+            <p class="head">Want to <span style="color:#2246C2">Connect With Us</span></p>
+            <p class="description">Don't hesitate. We are here to clear your confusions. Feel Free to contact Us.</p>
+        </div>
+        
+        <div class="bottom">
+            <div class="line"></div>
+            <div class="header">
+                <p class="head">More Ways To Reach Us</p>
+                <p onclick="location.href='https://in.linkedin.com/in/sunilprasadkuppusamy';" class="head" style="color: lightblue; margin-top:16px; margin-bottom:32px; cursor: pointer; line-height: normal; font-family: 'Montserrat'; font-style: normal;font-weight: 400;">With ❤ from Job Junction</p>
+            </div>
+            <div class="contact_info" style="cursor:pointer;">
+                <p onclick="location.href='mailto:sunilprasadk2001@gmail.com'"><span><i class="fa-solid fa-envelope"></i></span> contact@job-junction.com</p>
+                <p onclick="location.href='tel:9080244817'">
+                    <span><i class="fa-solid fa-phone"></i>
+                    </span> +91 9080244817</p>
+            </div>
+            <div class="social_info">
+                <div style="text-align: center;">
+                    <a href="#">FACEBOOK</a>
+                    <span><i class="fa-solid fa-circle" style="color: #D9D9D9; font-size: 8px; margin:auto 16px;"></i></span>
+                    <a href="#">TWITTER</a>
+                    <span><i class="fa-solid fa-circle" style="color: #D9D9D9; font-size: 8px; margin:auto 16px;"></i></span>
+                    <a href="#">LINKEDIN</a>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p>2022 Job Junction Pvt Ltd | All rights reserved </p>
+            </div>
+        </div>
+    </div>
+</body>    
+
