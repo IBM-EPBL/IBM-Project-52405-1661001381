@@ -5,7 +5,7 @@ PNT2022TMID40669
 
 Skill / Job Recommender Application
 
-TEAM LEADER   : C SUGANESHWARAN
+TEAM LEADER   : C SUGANESHWARAN 
 
 TEAM MEMBER 1 : C KAVIYARASAN
 
@@ -28,4 +28,12 @@ To provide equal and appropriate job/skill recommendations to all the people wit
 How might we recommend jobs for people's specific skills or interests and vice-versa? In the job searching world, Job description's explanation, advertising, and selection criteria aren’t the same during college and after college. It is entirely different. People are facing many practical issues when they searching jobs after their college days. As we are going to provide a different kind of job description alone will create a positive hopeful impact for fresher as well as experienced candidates. By this, we can satisfy both the fresher and experienced candidates who are all searching for jobs. As we are going to find the skills of the people through both the direct and indirect approach, we are able to get and find the right skill level for the people. In addition, we can get more insights about them. This creates a more positive impact and customer satisfaction in using our service and this is the existing problem to solve.
 
 
+PROJECT DEMO LINK 
+
+https://github.com/IBM-EPBL/IBM-Project-52405-1661001381/blob/main/Final%20Deliverables/Demovideolink.mp4
+
+
 ![image](https://user-images.githubusercontent.com/113816476/204096899-631ce58f-74f8-47f5-b227-11046fcdd2c4.png)
+
+
+
