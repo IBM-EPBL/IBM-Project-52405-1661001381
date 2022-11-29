@@ -28,7 +28,7 @@ To provide equal and appropriate job/skill recommendations to all the people wit
 How might we recommend jobs for people's specific skills or interests and vice-versa? In the job searching world, Job description's explanation, advertising, and selection criteria aren’t the same during college and after college. It is entirely different. People are facing many practical issues when they searching jobs after their college days. As we are going to provide a different kind of job description alone will create a positive hopeful impact for fresher as well as experienced candidates. By this, we can satisfy both the fresher and experienced candidates who are all searching for jobs. As we are going to find the skills of the people through both the direct and indirect approach, we are able to get and find the right skill level for the people. In addition, we can get more insights about them. This creates a more positive impact and customer satisfaction in using our service and this is the existing problem to solve.
 
 
-PROJECT DEMO LINK 
+PROJECT DEMO VIDEO LINK 
 
 https://github.com/IBM-EPBL/IBM-Project-52405-1661001381/blob/main/Final%20Deliverables/Demovideolink.mp4
 
